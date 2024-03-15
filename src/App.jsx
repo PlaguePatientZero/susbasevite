@@ -1,7 +1,9 @@
 import { debounce } from 'lodash';
 
 import '@rainbow-me/rainbowkit/styles.css';
-import { ConnectButton} from '@rainbow-me/rainbowkit';
+import { connectorsForWallets } from '@rainbow-me/rainbowkit'; // Import uniswapWallet and connectorsForWallets
+import { uniswapWallet, metaMaskWallet, coinbaseWallet } from '@rainbow-me/rainbowkit/wallets';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { getDefaultConfig, RainbowKitProvider} from '@rainbow-me/rainbowkit';
 import { WagmiProvider } from 'wagmi';
 import { base} from 'wagmi/chains';
@@ -24,13 +26,25 @@ const requestOptions = {
     'Authorization': `Bearer ${API_KEY}` // Add API key to the Authorization header
   },
 };
+// Set up wallet connectors
+const connectors = connectorsForWallets(
+  [
+    {
+      groupName: 'Recommended',
+      wallets: [uniswapWallet, metaMaskWallet, coinbaseWallet,], // Include Uniswap wallet in the Recommended group
+    },
+    // Add other wallet groups as needed
+  ],
+  { appName: 'susbase', projectId: 'susbase1' },
+);
 
 //CONNECT
 const config = getDefaultConfig({
+  connectors,
   appName: 'susbase',
   projectId: 'susbase1',
   chains: [base],
-  ssr: true, // If your dApp uses server side rendering (SSR)
+  ssr: true,
 });
 
 const queryClient = new QueryClient();

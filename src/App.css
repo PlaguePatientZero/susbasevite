@@ -13,7 +13,7 @@
 
   .balance-info {
     font-size: 0.7rem;
-    margin-top: 200px;
+    margin-top: 150px;
     right: 200px;
   }
 
@@ -58,10 +58,9 @@
   }
 
 
-
   .table-container {
     font-size: 0.45rem;
-    margin-top: 200px;
+    margin-top: 50px;
     padding-right: 30px;
     padding-left: 10px;
     width: 80%;
@@ -89,9 +88,7 @@
   }
 
   .slogan {
-    margin-top: 120px;
     font-size: 1rem;
-    
   }
 
   .slogan h2 {
@@ -143,7 +140,6 @@
   right: 2%;
   color: #31b935;
   font-size: 1rem;
-
   display: flex; /* Display the container as a flex container */
   flex-direction: row; /* Arrange the flex items horizontally */
   align-items: center; /* Align the flex items vertically */
@@ -331,6 +327,7 @@ button:focus {
 }
 
 .text-container {
+  font-size: 0.6rem; 
   display: flex;
   flex-direction: row; /* Ensure items are aligned horizontally */
   align-items: center; /* Center items vertically */
@@ -344,24 +341,22 @@ button:focus {
 
 }
 
-
-
 .text-container h1::after {
   content: " "; /* Add a space to separate the words */
 }
 
 
 .table-container {
-  margin-top: 200px;;
+  margin-top: 100px;
+  margin-bottom: 200px;
   padding-bottom: 20px;
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 1800px;
   background-color: rgba(30, 133, 35, 0.6);
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid #808080;
 }
+
 
 .table-header4 {
   padding-left: 70%;
