@@ -223,7 +223,7 @@ const App: React.FC = () => {
     <div className="App">
       <header className="App-header">
         <div className="header-left">
-            <img src="../public/suslogo2.png" alt="Logo" className="logo-container" />
+            <img src="/suslogo2.png" alt="Logo" className="logo-container" />
           <div className="text-container">
             <h1>Sustainable Growth </h1>
           </div>
@@ -234,7 +234,7 @@ const App: React.FC = () => {
           <a href="#stake" className="normal-tab" onClick={handleStakeClick}>Stake</a>
         </div>
         <div className="header-right">
-            <img src="../public/base.png" alt="Logobase" className="second-logo" />
+            <img src="/base.png" alt="Logobase" className="second-logo" />
             <div
               style={{
                 display: 'flex',
