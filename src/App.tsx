@@ -108,9 +108,8 @@ const App: React.FC = () => {
           const { amount, blocksRemaining } = lockingDetails;
   
           // Convert amount to a BigNumber and then to tokens
-          const Web3 = require('web3');
-          const lockedAmountInWei = Web3.utils.toBN(amount);
-          const lockedAmountInTokens = parseFloat(Web3.utils.fromWei(lockedAmountInWei, 'ether'));
+          //const lockedAmountInWei = Web3.utils.toBN(amount);
+          const lockedAmountInTokens = parseFloat(Web3.utils.fromWei(amount, 'ether'));
   
           console.log('Amount Locked:', lockedAmountInTokens);
           console.log('Blocks Remaining:', blocksRemaining);
@@ -146,7 +145,6 @@ const App: React.FC = () => {
       }
     }
   }, [susBalance, susTokenPrice, lockedAmount, tokensMinted, getSusBalance, fetchContract, fetchSusTokenPrice]);
-  
   
   
   //DENOUNCE 
