@@ -131,14 +131,10 @@ const App: React.FC = () => {
           const lockApy = (20 * (blocksPerYear / (150 * Math.sqrt(lockedAmountInTokens)))).toFixed(2);
           setLockApy(parseFloat(lockApy));
   
-          if (susBalance !== null && susTokenPrice !== null && lockedAmount !== null && tokensMinted !== null) {
-            setSusBalancePrice(susBalance * susTokenPrice);
-            setTLVprice(lockedAmount * susTokenPrice);
-            setMintedPrice(tokensMinted * susTokenPrice);
+          setSusBalancePrice(susBalance !== null && susTokenPrice !== null ? susBalance * susTokenPrice : null);
+          setTLVprice(lockedAmount !== null && susTokenPrice !== null ? lockedAmount * susTokenPrice : null);
+          setMintedPrice(tokensMinted !== null && susTokenPrice !== null ? tokensMinted * susTokenPrice : null);
           }
-        } else {
-          console.error('Unexpected locking details structure:', lockingDetails);
-        }
   
       } catch (error) {
         console.error('Error checking locking time:', error);
@@ -243,7 +239,7 @@ const App: React.FC = () => {
               <ConnectButton />
         </div>
         </div>
-        <div className="balance">
+        {/* <div className="balance">
           <div className="balance-info">
             <p> Balance: {susBalance !== null ? `${Math.round(susBalance).toLocaleString('en-US')}` : '0'}</p>
             <span className="sus-text">SUS</span>
@@ -251,7 +247,7 @@ const App: React.FC = () => {
               {susBalancePrice !== null ? `$${susBalancePrice.toFixed(2)}` : ''}
             </p>
           </div>
-        </div>
+        </div> */}
       </header>
 
       <div className="content">
